@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Trip Service Saga Payload",
+  "type": "object",
+  "properties": {
+    "payment_amount": {
+      "type": "number",
+      "minimum": 100
+    },
+    "hotel_name": {
+      "type": "string",
+      "minLength": 5
+    },
+    "flight_company_name": {
+      "type": "string",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "payment_amount",
+    "hotel_name",
+    "flight_company_name"
+  ]
+}

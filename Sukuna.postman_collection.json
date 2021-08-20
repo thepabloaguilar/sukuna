@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "5a97156b-14a9-463c-ba94-0bee0da8d05c",
+		"name": "Sukuna",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Saga",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Trip Saga\",\n    \"payload\": {\n        \"$schema\": \"https://json-schema.org/draft/2019-09/schema\",\n        \"title\": \"Trip Service Saga Payload\",\n        \"type\": \"object\",\n        \"properties\": {\n            \"payment_amount\": {\n                \"type\": \"number\",\n                \"minimum\": 100\n            },\n            \"hotel_name\": {\n                \"type\": \"string\",\n                \"minLength\": 5\n            },\n            \"flight_company_name\": {\n                \"type\": \"string\",\n                \"maxLength\": 10\n            }\n        },\n        \"required\": [\n            \"payment_amount\",\n            \"hotel_name\",\n            \"flight_company_name\"\n        ]\n    },\n    \"steps\": [\n        {\n            \"name\": \"Payment Step\"\n        },\n        {\n            \"name\": \"Hotel Step\"\n        },\n        {\n            \"name\": \"Flight Step\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sukunaURL}}/api/v1/sagas",
+					"host": [
+						"{{sukunaURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sagas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Saga",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Saga Name\",\n    \"payload\": {\n        \"$schema\": \"https://json-schema.org/draft/2019-09/schema\",\n        \"title\": \"Person\",\n        \"type\": \"object\",\n        \"properties\": {\n            \"name\": {\n                \"type\": \"string\",\n                \"description\": \"The person's first name.\"\n            },\n            \"age\": {\n                \"description\": \"Age in years which must be equal to or greater than zero.\",\n                \"type\": \"integer\",\n                \"minimum\": 0\n            }\n        }\n    },\n    \"steps\": [\n        {\n            \"name\": \"Step 1\"\n        },\n        {\n            \"name\": \"Step 2\"\n        },\n        {\n            \"name\": \"Step 3\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sukunaURL}}/api/v1/sagas",
+							"host": [
+								"{{sukunaURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sagas"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Saga",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sukunaURL}}/api/v1/sagas/4553dcb7-850f-440f-9d53-e8bc7136ed61",
+					"host": [
+						"{{sukunaURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sagas",
+						"4553dcb7-850f-440f-9d53-e8bc7136ed61"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Saga",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sukunaURL}}/api/v1/sagas/4553dcb7-850f-440f-9d53-e8bc7136ed61",
+							"host": [
+								"{{sukunaURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sagas",
+								"4553dcb7-850f-440f-9d53-e8bc7136ed61"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Saga Execution",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"payload\": {\n    \"payment_amount\": 1000,\n    \"hotel_name\": \"HOTEL XABLAUZER\",\n    \"flight_company_name\": \"LATAM\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sukunaURL}}/api/v1/sagas/83b1cb61-185a-4b1e-99f6-cfdb1a214a1e/executions",
+					"host": [
+						"{{sukunaURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sagas",
+						"83b1cb61-185a-4b1e-99f6-cfdb1a214a1e",
+						"executions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Saga Execution",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payload\": {\n    \"name\": \"Sukuna\",\n    \"age\": 1000\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sukunaURL}}/api/v1/sagas/4553dcb7-850f-440f-9d53-e8bc7136ed61/execution",
+							"host": [
+								"{{sukunaURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sagas",
+								"4553dcb7-850f-440f-9d53-e8bc7136ed61",
+								"execution"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Saga Execution",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sukunaURL}}/api/v1/sagas/27eab8e9-6e6d-4729-8a02-c622c99ddefa/executions/371f08de-3183-4417-b2d4-218cd544adae",
+					"host": [
+						"{{sukunaURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sagas",
+						"27eab8e9-6e6d-4729-8a02-c622c99ddefa",
+						"executions",
+						"371f08de-3183-4417-b2d4-218cd544adae"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Saga Execution",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sukunaURL}}/api/v1/sagas/27eab8e9-6e6d-4729-8a02-c622c99ddefa/executions/03a64174-6ad5-46fd-9bd2-9e6a1132814f",
+							"host": [
+								"{{sukunaURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sagas",
+								"27eab8e9-6e6d-4729-8a02-c622c99ddefa",
+								"executions",
+								"03a64174-6ad5-46fd-9bd2-9e6a1132814f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "sukunaURL",
+			"value": "http://localhost:8080"
+		}
+	]
+}
